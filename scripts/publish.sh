@@ -14,7 +14,7 @@ cd "$ROOT"
 : "${GITHUB_TOKEN:?Set GITHUB_TOKEN}"
 
 CODEBERG_REPO="https://codeberg.org/cubiczan/glacier-edge-arm"
-GITHUB_REPO="https://github.com/Cubiczan/glacier-edge-arm"
+GITHUB_REPO="https://github.com/icohangar-ops/glacier-edge-arm"
 
 echo "Creating Codeberg repo (if missing)..."
 curl -fsS -X POST "https://codeberg.org/api/v1/user/repos" \
@@ -40,7 +40,7 @@ git push "https://cubiczan:${CODEBERG_TOKEN}@codeberg.org/cubiczan/glacier-edge-
 git branch --set-upstream-to=codeberg/main main 2>/dev/null || true
 
 echo "Pushing to GitHub..."
-git push "https://x-access-token:${GITHUB_TOKEN}@github.com/Cubiczan/glacier-edge-arm.git" main:main
+git push "https://x-access-token:${GITHUB_TOKEN}@github.com/icohangar-ops/glacier-edge-arm.git" main:main
 
 echo "Done."
 echo "  Codeberg: ${CODEBERG_REPO}"

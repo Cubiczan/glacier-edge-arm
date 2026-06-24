@@ -2,7 +2,7 @@
 
 **Challenge:** [Arm AI Optimization Challenge 2026](https://arm-ai-optimization-challenge.devpost.com/)  
 **Track:** Physical AI (Track 1 — optimization output)  
-**Repos:** [Codeberg](https://codeberg.org/cubiczan/glacier-edge-arm) · [GitHub](https://github.com/Cubiczan/glacier-edge-arm)
+**Repos:** [Codeberg](https://codeberg.org/cubiczan/glacier-edge-arm) · [GitHub](https://github.com/icohangar-ops/glacier-edge-arm)
 
 ---
 
@@ -97,7 +97,7 @@ cargo build --release -p gea-cli
 | Link | URL |
 |------|-----|
 | Codeberg repo | https://codeberg.org/cubiczan/glacier-edge-arm |
-| GitHub repo | https://github.com/Cubiczan/glacier-edge-arm |
+| GitHub repo | https://github.com/icohangar-ops/glacier-edge-arm |
 | README | https://codeberg.org/cubiczan/glacier-edge-arm/src/branch/main/README.md |
 
 ---
