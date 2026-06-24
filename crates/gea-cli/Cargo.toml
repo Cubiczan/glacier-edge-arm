@@ -1,0 +1,23 @@
+[package]
+name = "gea-cli"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+repository.workspace = true
+description = "CLI for GlacierEdge-Arm BESS edge inference"
+
+[[bin]]
+name = "gea"
+path = "src/main.rs"
+
+[dependencies]
+anyhow = { workspace = true }
+clap = { workspace = true }
+gea-core = { workspace = true }
+gea-governance = { workspace = true }
+gea-inference = { workspace = true }
+gea-telemetry = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+serde_yaml = { workspace = true }

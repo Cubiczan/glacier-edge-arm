@@ -1,0 +1,8 @@
+protocol: consensus-hardening-protocol
+version: "0.1.0"
+domain: bess_edge_inference
+foundation_threshold: 75
+require_adversarial_review: true
+inference_confidence_floor: 0.55
+critical_fault_classes:
+  - thermal_runaway

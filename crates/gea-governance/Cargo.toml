@@ -1,0 +1,21 @@
+[package]
+name = "gea-governance"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+repository.workspace = true
+description = "CHP-style signed audit ledger for GlacierEdge-Arm inference"
+
+[dependencies]
+chrono = { workspace = true }
+gea-core = { workspace = true }
+gea-inference = { workspace = true }
+hex = { workspace = true }
+hmac = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+serde_yaml = { workspace = true }
+sha2 = { workspace = true }
+thiserror = { workspace = true }
+uuid = { workspace = true }

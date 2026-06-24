@@ -1,0 +1,23 @@
+{
+  "platform": "aarch64",
+  "fp32": {
+    "precision": "fp32",
+    "iterations": 10000,
+    "total_us": 160,
+    "mean_us": 0.0160615,
+    "p50_us": 1,
+    "p99_us": 1,
+    "model_bytes": 916
+  },
+  "int8": {
+    "precision": "int8",
+    "iterations": 10000,
+    "total_us": 524,
+    "mean_us": 0.0524325,
+    "p50_us": 1,
+    "p99_us": 1,
+    "model_bytes": 292
+  },
+  "speedup_ratio": 0.0160615,
+  "size_reduction_ratio": 3.136986301369863
+}

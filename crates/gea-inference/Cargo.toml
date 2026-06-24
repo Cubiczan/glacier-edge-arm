@@ -1,0 +1,19 @@
+[package]
+name = "gea-inference"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+repository.workspace = true
+description = "Edge BESS fault classifier with FP32 and INT8 inference paths"
+
+[dependencies]
+gea-core = { workspace = true }
+gea-telemetry = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+thiserror = { workspace = true }
+uuid = { workspace = true }
+
+[dev-dependencies]
+gea-telemetry = { workspace = true }

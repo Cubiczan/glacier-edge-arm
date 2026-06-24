@@ -1,0 +1,9 @@
+/target/
+**/*.rs.bk
+.DS_Store
+.env
+.gea/
+*.onnx
+__pycache__/
+.venv/
+tools/.venv/
