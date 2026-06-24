@@ -93,9 +93,9 @@ impl TelemetryGenerator {
                     self.config.nominal_impedance_mohm + 2.5 * t + noise_z,
                 ),
                 FaultScenario::VoltageSag => (
-                    self.config.nominal_voltage_v - 0.35 * t + noise_v,
-                    self.config.nominal_temp_c + 2.0 * t + noise_temp,
-                    self.config.nominal_impedance_mohm + 0.2 * t + noise_z,
+                    self.config.nominal_voltage_v - 0.42 * t + noise_v,
+                    self.config.nominal_temp_c + 1.0 * t + noise_temp,
+                    self.config.nominal_impedance_mohm + noise_z,
                 ),
             };
 

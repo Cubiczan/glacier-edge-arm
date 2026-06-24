@@ -142,6 +142,14 @@ cargo test --all
 
 MIT — see [LICENSE](LICENSE).
 
+## Media assets
+
+| Asset | Path | Use |
+|-------|------|-----|
+| Devpost thumbnail | `assets/thumbnail.png` | Project thumbnail |
+| Demo video | `assets/demo.mp4` | Devpost / YouTube upload (~2 min) |
+| VHS source | `assets/demo.tape` | Re-render with `vhs assets/demo.tape` |
+
 ## Author
 
 [cubiczan](https://codeberg.org/cubiczan) — Arm AI Optimization Challenge 2026 submission.

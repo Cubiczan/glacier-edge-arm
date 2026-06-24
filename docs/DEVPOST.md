@@ -108,7 +108,7 @@ cargo build --release -p gea-cli
 2. **Solution (30s):** GlacierEdge-Arm — edge Arm inference on cell telemetry.
 3. **Live demo (60s):** `gea demo --scenario thermal_runaway` → detection, TripBreaker action, audit log.
 4. **Benchmark (30s):** `gea bench` → 3.1× size reduction, sub-ms latency on aarch64.
-5. **Evaluate (20s):** 96% accuracy, 0% false positives on normal.
+5. **Evaluate (20s):** 99.8% accuracy, 0% false positives on normal.
 6. **Close (20s):** Open source, cubiczan, Physical AI track, Arm Performix-ready.
 
 ---
@@ -117,7 +117,7 @@ cargo build --release -p gea-cli
 
 - [x] Public MIT repo on Codeberg + GitHub
 - [x] Open source license visible in repo
-- [ ] 3-minute demo video (YouTube/Vimeo)
+- [x] Demo video in repo (`assets/demo.mp4`) — upload to YouTube/Vimeo for Devpost
 - [ ] Arm Performix benchmark on Graviton or Pi 5 (optional but strong)
-- [ ] Thumbnail image for Devpost
+- [x] Thumbnail image for Devpost (`assets/thumbnail.png`)
 - [ ] Select track: **Physical AI**

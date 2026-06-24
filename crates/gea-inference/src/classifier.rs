@@ -124,10 +124,10 @@ impl EdgeClassifier {
         } else if mean_z > 2.3 {
             logits[3] = 4.5;
             logits[0] = -2.0;
-        } else if dv_dt < -0.02 && min_v < 3.35 {
+        } else if dv_dt < -0.014 && min_v < 3.42 && mean_z < 2.1 {
             logits[4] = 4.5;
             logits[0] = -2.0;
-        } else if v_spread > 0.15 && dv_dt > -0.02 && mean_v < 3.55 {
+        } else if v_spread > 0.15 && dv_dt > -0.014 && mean_v < 3.55 {
             logits[2] = 4.0;
             logits[0] = -1.5;
         }
@@ -232,5 +232,15 @@ mod tests {
         let clf = EdgeClassifier::new();
         let result = clf.infer_samples(&window);
         assert_eq!(result.fault_class, FaultClass::Normal);
+    }
+
+    #[test]
+    fn detects_voltage_sag() {
+        let mut gen = TelemetryGenerator::new(GeneratorConfig::default());
+        let window = gen.generate_window(0, FaultScenario::VoltageSag);
+        let clf = EdgeClassifier::new();
+        let result = clf.infer_samples(&window);
+        assert_eq!(result.fault_class, FaultClass::VoltageSag);
+        assert!(result.confidence > 0.5);
     }
 }
