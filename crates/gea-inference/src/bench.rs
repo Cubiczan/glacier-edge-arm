@@ -90,7 +90,7 @@ fn summarize(precision: Precision, mut latencies: Vec<u64>, model_bytes: usize) 
     BenchResult {
         precision,
         iterations,
-        total_us: (total_ns / 1000) as u64,
+        total_us: total_ns / 1000,
         mean_us,
         p50_us: p50_us.max(1),
         p99_us: p99_us.max(1),

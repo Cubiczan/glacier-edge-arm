@@ -6,7 +6,7 @@ use gea_inference::{run_benchmark, EdgeClassifier, EvaluationReport, QuantizedCl
 use gea_telemetry::{FaultScenario, GeneratorConfig, TelemetryGenerator};
 use std::fs::File;
 use std::io::Write;
-use std::path::PathBuf;
+use std::path::{Path, PathBuf};
 
 #[derive(Parser)]
 #[command(
@@ -88,8 +88,10 @@ fn main() -> Result<()> {
             window_size,
         } => {
             let fault = parse_scenario(&scenario)?;
-            let mut config = GeneratorConfig::default();
-            config.window_size = window_size;
+            let config = GeneratorConfig {
+                window_size,
+                ..Default::default()
+            };
             let mut gen = TelemetryGenerator::new(config);
             let window = gen.generate_window(0, fault);
             write_json(&output, &window)?;
@@ -140,7 +142,7 @@ fn main() -> Result<()> {
     Ok(())
 }
 
-fn run_demo(cli: &Cli, policy_path: &PathBuf, scenario: &str) -> Result<()> {
+fn run_demo(cli: &Cli, policy_path: &Path, scenario: &str) -> Result<()> {
     let fault = parse_scenario(scenario)?;
     let mut gen = TelemetryGenerator::new(GeneratorConfig::default());
     let window = gen.generate_window(0, fault);
@@ -199,11 +201,11 @@ fn parse_scenario(s: &str) -> Result<FaultScenario> {
     }
 }
 
-fn resolve_path(root: &PathBuf, path: &PathBuf) -> PathBuf {
+fn resolve_path(root: &Path, path: &Path) -> PathBuf {
     if path.is_relative() {
         root.join(path)
     } else {
-        path.clone()
+        path.to_path_buf()
     }
 }
 
