@@ -153,3 +153,28 @@ MIT — see [LICENSE](LICENSE).
 ## Author
 
 [cubiczan](https://codeberg.org/cubiczan) — Arm AI Optimization Challenge 2026 submission.
+
+## Propagation decisions
+
+Decisions from the portfolio propagation matrix (SecOps/Gov wave C), recorded
+per the adopt-or-reverse contract. Revisit triggers are binding.
+
+### Row 31 — typed claim lifecycle: REVERSED
+
+A governed claim lifecycle (typed claims, four-eyes review, human locks,
+lock-gated exports) requires an enforced review step. This repo's governance
+crate *declares* the intent but never enforces it: `require_adversarial_review`
+exists in `crates/gea-governance/src/policy.rs` (default `true`) and in
+`policies/chp.yaml`, and **no code anywhere in the repo reads the flag to
+gate anything** — the declared review gate is currently aspirational. Building
+the claim lifecycle on top would inherit the same gap: ceremony wired to a
+switch that isn't connected.
+
+**Hygiene flag (out of row-31 scope):** either enforce
+`require_adversarial_review` at the decision point it was written for, or
+remove the flag and the yaml key. A declared-but-unenforced policy flag is
+worse than none — it reads as a guarantee.
+
+**Revisit trigger:** the flag is actually enforced (or removed and replaced by
+a real review step) AND a typed claim surface appears in the product. Then
+adopt the canonical lifecycle (erp-control-plane is the reference shape).
